@@ -1,9 +1,13 @@
-<h1>My lists</h1>
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://i.imgur.com/Cx7oeRz.jpg);">
+  <div class="container">
+    <h1>The place in which you can <strong>list</strong> your <strong>favorites movies</strong>!</h1>
+    <p>Add all the amazing titles that marked your childhood.</p>
+    <%= link_to "Create List", new_list_path, class:"btn btn-flat" %>
+    <ul>
+      <% @lists.each do |list| %>
+        <%= link_to list.name, list_path(list), class:"btn btn-flat"%>
+      <% end %>
+    </ul>
+  </div>
+</div>
 
-<ul>
-  <% @lists.each do |list| %>
-    <%= link_to list.name, list_path(list) %>
-  <% end %>
-</ul>
-
-<%= link_to "Create List", new_list_path %>
