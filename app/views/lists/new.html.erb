@@ -1,8 +1,8 @@
-<h1>Create new List</h1>
+<h1 class="form-text">Create new List</h1>
 
 <%= simple_form_for @list do |f|  %>
-  <%= f.input :name %>
-  <%= f.input :photo, as: :file %>
+  <%= f.input :name, class:"form-text" %>
+  <%= f.input :photo, as: :file, class:"form-text" %>
   <%= f.submit  %>
 <% end %>
 
