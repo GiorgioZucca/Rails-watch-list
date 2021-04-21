@@ -1,18 +1,28 @@
-<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://i.imgur.com/Cx7oeRz.jpg);">
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://wallpapercave.com/wp/wp8952307.png);">
   <div class="container">
-    <h1>The place in which you can <strong>list</strong> your <strong>favorites movies</strong>!</h1>
-    <p>Add all the amazing titles that marked your childhood.</p>
+    <h1>The place in which you can <strong>create several</strong> Star Wars <strong>lists</strong>!</h1>
+    <p>You can create the list with best and worst movies (if this is possible). May the force be with you</p>
     <%= link_to "Create List", new_list_path, class:"btn btn-flat" %>
-    <ul>
-      <% @lists.each do |list| %>
-        <%= link_to list.name, list_path(list), class:"btn btn-flat"%>
-        <% if list.photo.attached? %>
-          <%= cl_image_tag list.photo.key, height: 300, width: 400, crop: :fill %>
-        <% end %>
-      <% end %>
-
-
-    </ul>
   </div>
 </div>
+
+<div class="container">
+  <div class="list-container">
+    <div class="list-container-item">
+      <div class="card-product">
+      <img src="https://gamerheadquarters.com/sort/movies/starwars/starwars.jpg" />
+      <div class="card-product-infos">
+        <h2>
+          <% @lists.each do |list| %>
+          <%= link_to list.name, list_path(list), class:"btn btn-flat"%>
+          <% end %>
+        </h2>
+      </div>
+    </div>
+   </div>
+  </div>
+</div>
+
+
+
 
